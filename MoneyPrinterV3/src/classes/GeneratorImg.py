@@ -50,12 +50,3 @@ class Generation:
                     ).content
         except RequestException as exc:
             raise RequestException("Unable to fetch the response.") from exc
-
-'''
-self image_prompts:  ["Anna, a selfless flower caregiver, surrounded by a vibrant bouquet of flowers, with a subtle hint of sadness in her eyes, reflecting her poignant realization at a friend's funeral.", 'Anna, with a gentle touch, tending to a wilting flower, symbolizing her own withering away, amidst a backdrop of lush greenery and colorful blooms.', "A close-up of Anna's hands, worn and weathered from years of nurturing flowers, yet still holding a delicate petal, representing her journey towards self-care.", 'Anna, standing in a field of sunflowers, their bright yellow petals shining like a beacon of hope, as she begins to prioritize her own growth and well-being.', 'A serene Anna, sitting in a garden, surrounded by a kaleidoscope of flowers, with a soft, warm light illuminating her face, symbolizing her newfound balance and harmony.', 'Anna, with a determined look, setting boundaries and saying no to the constant demands of others, amidst a backdrop of overgrown, tangled flowers, representing her old life.', "A split-screen image, with Anna's worn, tired face on one side, and a vibrant, blooming flower on the other, highlighting her transformation towards self-care and prioritizing her own needs.", 'Anna, gently watering a small, delicate flower, symbolizing her newfound ability to nurture and care for herself, amidst a backdrop of lush, green foliage.', 'A stunning Anna, standing in a blooming garden, surrounded by a riot of colors, with a confident smile, representing her growth and flourishing, as she learns to prioritize her own needs.', 'Anna, sitting in a cozy, intimate space, surrounded by candles, flowers, and soft, warm lighting, symbolizing her newfound love and care for herself, as she repots her own life.']
-
-'''
-
-"""
-freeGPT's pollinations module
-"""
