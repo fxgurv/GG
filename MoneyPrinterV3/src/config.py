@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import redis
 import srt_equalizer
 
 from termcolor import colored
@@ -38,6 +39,12 @@ def get_email_credentials() -> dict:
     """
     with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
         return json.load(file)["email"]
+
+
+def get_niche() -> str:
+    redis_client = redis.Redis.from_url(url=get_redis_uri(), decode_responses=True)
+    niche = redis_client.lpop('youtube:niche')
+    return niche
 
 def get_verbose() -> bool:
     """
