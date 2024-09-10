@@ -10,12 +10,8 @@ import os, shutil
 
 def upload_youtube_using_selenium(video_path, title, description):
   options = webdriver.ChromeOptions()
-  options.add_argument(f"--user-data-dir={get_user_data()}") #e.g. C:\\Users\\noone\\AppData\\Local\\Google\\Chrome\\User Data
-  # options.add_argument(r'--profile-directory=YourProfileDir') #e.g. Profile 3
+  options.add_argument(r'--profile-directory=YourProfileDir') #e.g. Profile 3
   driver = webdriver.Chrome(options=options)
-  # driver = webdriver.Chrome(chrome_options=options)
-  # driver.get("https://youtube.com")
-  # Go to youtube.com/upload
   driver.get("https://www.youtube.com/upload")
 
   # Set video file
@@ -135,8 +131,6 @@ def upload_youtube_using_selenium(video_path, title, description):
   driver.quit()
 
 if __name__ == "__main__":
-    # upload_youtube_using_selenium("test-upload-file.mp4", "test upload se col title", "test upload desc")
-    # parent_folder = r"D:\myprojs\MoneyPrinterV2"
     parent_folder = r"D:\myprojects\relevant-jobs\MoneyPrinterV2"
     src = "shorts"
     for fname in os.listdir(src):
