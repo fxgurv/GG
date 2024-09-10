@@ -111,7 +111,4 @@ def choose_random_song() -> str:
     except Exception as e:
         error(f"Error occurred while choosing random song: {str(e)}")
 
-def get_niche() -> str:
-    redis_client = redis.Redis.from_url(url=get_redis_uri(), decode_responses=True)
-    niche = redis_client.lpop('youtube:niche')
-    return niche
+
