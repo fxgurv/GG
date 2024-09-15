@@ -1,0 +1,30 @@
+{
+  "verbose": true,
+  "browser": "firefox",
+  "firefox_profile": "C:\\Users\\user\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\t3opcsof.motivation",
+  "user_data": "C:\\Users\\${user}\\AppData\\Local\\Google\\Chrome\\User Data",
+  "headless": false,
+  "twitter_language": "English",
+  "llm": "claude_3_haiku",
+  "image_prompt_llm": "claude_3_haiku",
+  "image_model": "prodia",
+  "threads": 8,
+  "zip_url": "https://huggingface.co/AZILS/BG/resolve/main/BG.zip?download=true",
+  "is_for_kids": false,
+  "google_maps_scraper": "https://github.com/gosom/google-maps-scraper/archive/refs/tags/v0.9.7.zip",
+  "email": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "",
+    "password": ""
+  },
+  "google_maps_scraper_niche": "",
+  "scraper_timeout": 300,
+  "outreach_message_subject": "I have a question...",
+  "outreach_message_body_file": "outreach_message.html",
+  "redis_uri": "redis://localhost:6379",
+  "gemini_api_key": "9WmAFjWMNuXjlaLnYa8eO813tY",
+  "assembly_ai_api_key": "e9c2184370becdf77f2a9e6a45",
+  "font": "LuckeyGuy.ttf",
+  "imagemagick_path": "C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI\\magick.exe"
+}
