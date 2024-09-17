@@ -3,7 +3,6 @@ import random
 import zipfile
 import requests
 import platform
-
 from status import *
 from config import *
 
@@ -108,9 +107,3 @@ def choose_random_song() -> str:
         return os.path.join(ROOT_DIR, "Songs", song)
     except Exception as e:
         error(f"Error occurred while choosing random song: {str(e)}")
-
-import redis
-def get_niche() -> str:
-    redis_client = redis.Redis.from_url(url=get_redis_uri(), decode_responses=True)
-    niche = redis_client.lpop('youtube:niche')
-    return niche
