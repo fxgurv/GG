@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import redis
 import srt_equalizer
 from termcolor import colored
 
@@ -28,7 +29,7 @@ def get_first_time_running() -> bool:
     """
     return not os.path.exists(os.path.join(ROOT_DIR, ".mp"))
 
-import redis
+
 def get_niche() -> str:
     redis_client = redis.Redis.from_url(url=get_redis_uri(), decode_responses=True)
     niche = redis_client.lpop('youtube:niche')
