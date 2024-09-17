@@ -28,15 +28,13 @@ def get_first_time_running() -> bool:
     """
     return not os.path.exists(os.path.join(ROOT_DIR, ".mp"))
 
-
+import redis
+def get_niche() -> str:
+    redis_client = redis.Redis.from_url(url=get_redis_uri(), decode_responses=True)
+    niche = redis_client.lpop('youtube:niche')
+    return niche
 
 def get_verbose() -> bool:
-    """
-    Gets the verbose flag from the config file.
-
-    Returns:
-        verbose (bool): The verbose flag
-    """
     with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
         return json.load(file)["verbose"]
 
