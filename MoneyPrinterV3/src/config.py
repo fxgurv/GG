@@ -2,7 +2,6 @@ import os
 import sys
 import json
 import srt_equalizer
-
 from termcolor import colored
 
 ROOT_DIR = os.path.dirname(sys.path[0])
@@ -29,15 +28,7 @@ def get_first_time_running() -> bool:
     """
     return not os.path.exists(os.path.join(ROOT_DIR, ".mp"))
 
-def get_email_credentials() -> dict:
-    """
-    Gets the email credentials from the config file.
 
-    Returns:
-        credentials (dict): The email credentials
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["email"]
 
 def get_verbose() -> bool:
     """
@@ -79,15 +70,6 @@ def get_model() -> str:
     with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
         return json.load(file)["llm"]
 
-def get_twitter_language() -> str:
-    """
-    Gets the Twitter language from the config file.
-
-    Returns:
-        language (str): The Twitter language
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["twitter_language"]
 
 def get_image_model() -> str:
     """
@@ -138,56 +120,6 @@ def get_is_for_kids() -> bool:
     """
     with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
         return json.load(file)["is_for_kids"]
-
-def get_google_maps_scraper_zip_url() -> str:
-    """
-    Gets the URL to the zip file containing the Google Maps scraper.
-
-    Returns:
-        url (str): The URL to the zip file
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["google_maps_scraper"]
-
-def get_google_maps_scraper_niche() -> str:
-    """
-    Gets the niche for the Google Maps scraper.
-
-    Returns:
-        niche (str): The niche
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["google_maps_scraper_niche"]
-
-def get_scraper_timeout() -> int:
-    """
-    Gets the timeout for the scraper.
-
-    Returns:
-        timeout (int): The timeout
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["scraper_timeout"] or 300
-
-def get_outreach_message_subject() -> str:
-    """
-    Gets the outreach message subject.
-
-    Returns:
-        subject (str): The outreach message subject
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["outreach_message_subject"]
-    
-def get_outreach_message_body_file() -> str:
-    """
-    Gets the outreach message body file.
-
-    Returns:
-        file (str): The outreach message body file
-    """
-    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
-        return json.load(file)["outreach_message_body_file"]
 
 def get_assemblyai_api_key() -> str:
     """
