@@ -1,21 +1,19 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
-import pyperclip
 import time
-from config import get_user_data
+import pyperclip
 import os, shutil
+from selenium import webdriver
+from config import get_user_data
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 
-def upload_youtube_using_selenium(video_path, title, description):
+
+def upload_to_youtube(video_path, title, description):
   options = webdriver.ChromeOptions()
   options.add_argument(f"--user-data-dir={get_user_data()}") #e.g. C:\\Users\\noone\\AppData\\Local\\Google\\Chrome\\User Data
-  # options.add_argument(r'--profile-directory=YourProfileDir') #e.g. Profile 3
+  options.add_argument(r'--profile-directory=YourProfileDir') #e.g. Profile 3
   driver = webdriver.Chrome(options=options)
-  # driver = webdriver.Chrome(chrome_options=options)
-  # driver.get("https://youtube.com")
-  # Go to youtube.com/upload
   driver.get("https://www.youtube.com/upload")
 
   # Set video file
@@ -164,6 +162,6 @@ if __name__ == "__main__":
             print('video_path: ', video_path)
             print('title: ', title)
             print('description: ', description)
-            upload_youtube_using_selenium(video_path, title, description)
+            upload_to_youtube(video_path, title, description)
             abs_folder_path = os.path.join(parent_folder, folder_path)
             shutil.rmtree(abs_folder_path)
