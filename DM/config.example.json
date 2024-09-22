@@ -24,5 +24,8 @@
   "redis_uri": "",
   "user_data": "C:\\Users\\${user}\\AppData\\Local\\Google\\Chrome\\User Data",
   "font": "bold_font.ttf",
-  "imagemagick_path": "/usr/bin/convert"
+  "imagemagick_path": "/usr/bin/convert",
+  "TTS": "coqui_tts",
+  "elevenlabs_api_key": "",
+  "elevenlabs_voice": "Rachel"
 }
