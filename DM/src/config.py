@@ -248,3 +248,36 @@ def get_imagemagick_path() -> str:
     """
     with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
         return json.load(file)["imagemagick_path"]
+
+
+
+
+def get_tts_type() -> str:
+    """
+    Gets the TTS type from the config file.
+
+    Returns:
+        tts_type (str): The TTS type (elevenlabs or coqui_tts)
+    """
+    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
+        return json.load(file).get("tts_type", "coqui_tts")
+
+def get_elevenlabs_api_key() -> str:
+    """
+    Gets the ElevenLabs API key from the config file.
+
+    Returns:
+        api_key (str): The ElevenLabs API key
+    """
+    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
+        return json.load(file).get("elevenlabs_api_key", "")
+
+def get_elevenlabs_voice() -> str:
+    """
+    Gets the ElevenLabs voice from the config file.
+
+    Returns:
+        voice (str): The ElevenLabs voice
+    """
+    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
+        return json.load(file).get("elevenlabs_voice", "Rachel")
