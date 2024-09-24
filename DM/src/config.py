@@ -250,8 +250,6 @@ def get_imagemagick_path() -> str:
         return json.load(file)["imagemagick_path"]
 
 
-
-
 def get_tts_type() -> str:
     """
     Gets the TTS type from the config file.
